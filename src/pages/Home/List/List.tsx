@@ -46,7 +46,7 @@ const List: React.FC<ListProps> = ({ listName, list }) => {
 
   return (
     <section ref={drop} className={styles['list']}>
-      <p className={styles['list__name']}>{listName.replace(/([A-Z])/g, ' $1').trim()}</p>
+      <p className={styles['list__name']}>{listName.replace(/([A-Z])/g, ' $1').trim()} - Задач в списке {list.length}</p>
       <ul ref={listRef} className={styles['list__block']}>
         {list.map((item, index) => (
           <React.Fragment key={item.id}>

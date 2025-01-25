@@ -80,7 +80,6 @@ const StorageReducer = createSlice({
       if (index !== -1) {
         const targetIndex = direction === 'up' ? index - 1 : index + 1;
         if (targetIndex >= 0 && targetIndex < currentList.length) {
-          // Меняем местами элементы
           [currentList[index], currentList[targetIndex]] = [currentList[targetIndex], currentList[index]];
           localStorage.setItem("ToDoData", JSON.stringify(state));
         }
