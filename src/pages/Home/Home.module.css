@@ -1,0 +1,9 @@
+.lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--gap-48) 0 0 0;
+  gap: var(--gap-16);
+}
+
+/*# sourceMappingURL=Home.module.css.map */
