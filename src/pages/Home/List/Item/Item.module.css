@@ -1,0 +1,215 @@
+.item,
+.item.clone {
+  height: 100%;
+  width: 100%;
+  background: var(--primary-color-3);
+  border-radius: var(--border-radius-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-12);
+  padding: var(--gap-16);
+  align-self: flex-start;
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.item__tag, .item__tag--highest-priority,
+.item.clone__tag--highest-priority, .item__tag--high-priority,
+.item.clone__tag--high-priority, .item__tag--medium-priority,
+.item.clone__tag--medium-priority, .item__tag--low-priority,
+.item.clone__tag--low-priority, .item__date-time, .item__date-time--overdue,
+.item.clone__date-time--overdue, .item__date-time--not-overdue,
+.item.clone__date-time--not-overdue,
+.item.clone__tag,
+.item.clone__date-time {
+  align-self: flex-start;
+  border-radius: var(--border-radius-2);
+  border: none;
+}
+.item__tag, .item__tag--highest-priority,
+.item.clone__tag--highest-priority, .item__tag--high-priority,
+.item.clone__tag--high-priority, .item__tag--medium-priority,
+.item.clone__tag--medium-priority, .item__tag--low-priority,
+.item.clone__tag--low-priority,
+.item.clone__tag {
+  padding: 2px 8px;
+}
+.item__tag--low-priority,
+.item.clone__tag--low-priority {
+  font-size: var(--font-size-10);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--font-color-1);
+  background-color: var(--secondary-color-1);
+}
+.item__tag--medium-priority,
+.item.clone__tag--medium-priority {
+  font-size: var(--font-size-10);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--font-color-2);
+  background-color: var(--secondary-color-2);
+}
+.item__tag--high-priority,
+.item.clone__tag--high-priority {
+  font-size: var(--font-size-10);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--font-color-3);
+  background-color: var(--secondary-color-3);
+}
+.item__tag--highest-priority,
+.item.clone__tag--highest-priority {
+  font-size: var(--font-size-10);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--font-color-4);
+  background-color: var(--secondary-color-4);
+}
+.item__text,
+.item.clone__text {
+  font-size: var(--font-size-14);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--font-color-8);
+  border: none;
+}
+.item__date-time, .item__date-time--overdue,
+.item.clone__date-time--overdue, .item__date-time--not-overdue,
+.item.clone__date-time--not-overdue,
+.item.clone__date-time {
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.item__date-time--not-overdue,
+.item.clone__date-time--not-overdue {
+  font-size: var(--font-size-10);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--font-color-5);
+  background-color: var(--secondary-color-5);
+}
+.item__date-time--overdue,
+.item.clone__date-time--overdue {
+  font-size: var(--font-size-10);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--font-color-6);
+  background-color: var(--secondary-color-6);
+}
+.item__date, .item__time,
+.item.clone__date,
+.item.clone__time {
+  display: flex;
+}
+.item__edit,
+.item.clone__edit {
+  position: absolute;
+  right: var(--gap-16);
+  top: var(--gap-16);
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  border: none;
+  display: none;
+  cursor: pointer;
+}
+.item__edit:hover,
+.item.clone__edit:hover {
+  background-color: var(--primary-color-4);
+}
+.item__delete,
+.item.clone__delete {
+  position: absolute;
+  right: calc(var(--gap-16) * 2 + 14px);
+  top: var(--gap-16);
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  border: none;
+  display: none;
+  cursor: pointer;
+}
+.item__delete:hover,
+.item.clone__delete:hover {
+  background-color: var(--primary-color-4);
+}
+.item__btn, .item__btn--right,
+.item.clone__btn--right, .item__btn--left,
+.item.clone__btn--left, .item__btn--down,
+.item.clone__btn--down, .item__btn--top,
+.item.clone__btn--top,
+.item.clone__btn {
+  display: none;
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  padding: 0;
+  background-color: transparent;
+}
+.item__btn:hover, .item__btn--right:hover,
+.item.clone__btn--right:hover, .item__btn--left:hover,
+.item.clone__btn--left:hover, .item__btn--down:hover,
+.item.clone__btn--down:hover, .item__btn--top:hover,
+.item.clone__btn--top:hover,
+.item.clone__btn:hover {
+  background-color: var(--primary-color-4);
+}
+.item__btn--top,
+.item.clone__btn--top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+.item__btn--down,
+.item.clone__btn--down {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+.item__btn--left,
+.item.clone__btn--left {
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 100%;
+}
+.item__btn--right,
+.item.clone__btn--right {
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 100%;
+}
+.item:hover .item__edit,
+.item.clone:hover .item__edit {
+  display: block;
+}
+.item:hover .item__delete,
+.item.clone:hover .item__delete {
+  display: block;
+}
+
+@media (width < 800px) {
+  .item:hover .item__btn, .item:hover .item__btn--top,
+  .item:hover .item.clone__btn--top, .item:hover .item__btn--down,
+  .item:hover .item.clone__btn--down, .item:hover .item__btn--left,
+  .item:hover .item.clone__btn--left, .item:hover .item__btn--right,
+  .item:hover .item.clone__btn--right {
+    display: block;
+  }
+  .item:hover .item__edit {
+    display: block;
+  }
+  .item:hover .item__delete {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=Item.module.css.map */

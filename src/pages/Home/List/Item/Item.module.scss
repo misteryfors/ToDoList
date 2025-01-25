@@ -1,0 +1,189 @@
+@use "../../../../mixins/fonts-mixin.scss" as fonts;
+
+.item,
+.item.clone
+{
+  height: 100%;
+  width: 100%;
+  background: var(--primary-color-3);
+  border-radius: var(--border-radius-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-12); // Работает для вертикальных элементов внутри .item
+  padding: var(--gap-16);
+  align-self: flex-start;
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+
+
+  &__tag,
+  &__date-time {
+    align-self: flex-start;
+    border-radius: var(--border-radius-2);
+    border: none;
+  }
+
+  &__tag {
+    padding: 2px 8px;
+    &--low-priority{
+      @extend .item__tag;
+      @include fonts.font-10-semi-bold;
+      color: var(--font-color-1);
+      background-color: var(--secondary-color-1);
+    }
+    &--medium-priority{
+      @extend .item__tag;
+      @include fonts.font-10-semi-bold;
+      color: var(--font-color-2);
+      background-color: var(--secondary-color-2);
+    }
+    &--high-priority{
+      @extend .item__tag;
+      @include fonts.font-10-semi-bold;
+      color: var(--font-color-3);
+      background-color: var(--secondary-color-3);
+    }
+    &--highest-priority{
+      @extend .item__tag;
+      @include fonts.font-10-semi-bold;
+      color: var(--font-color-4);
+      background-color: var(--secondary-color-4);
+    }
+  }
+
+  &__text {
+    @include fonts.font-14-regular;
+    color: var(--font-color-8);
+    border: none;
+  }
+
+  &__date-time {
+    padding: 6px 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    &--not-overdue{
+      @extend .item__date-time;
+      @include fonts.font-10-semi-bold;
+      color: var(--font-color-5);
+      background-color: var(--secondary-color-5);
+    }
+    &--overdue{
+      @extend .item__date-time;
+      @include fonts.font-10-semi-bold;
+      color: var(--font-color-6);
+      background-color: var(--secondary-color-6);
+    }
+  }
+
+  &__date,
+  &__time{
+    display: flex;
+  }
+  &__edit{
+    position: absolute;
+    right: var(--gap-16);
+    top: var(--gap-16);
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    border: none;
+    display: none;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--primary-color-4);
+    }
+
+
+  }
+  &__delete{
+    position: absolute;
+    right: calc(var(--gap-16) * 2 + 14px );
+    top: var(--gap-16);
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    border: none;
+    display: none;
+    cursor: pointer;
+
+
+    &:hover {
+      background-color: var(--primary-color-4);
+    }
+
+
+  }
+  &__btn{
+    display: none;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+    padding: 0;
+    background-color: transparent;
+    &:hover {
+      background-color: var(--primary-color-4) ;
+    }
+
+    &--top{
+      @extend .item__btn;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+    }
+
+    &--down{
+      @extend .item__btn;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+    }
+
+    &--left{
+      @extend .item__btn;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 100%;
+    }
+
+    &--right{
+      @extend .item__btn;
+      right: 0;
+      top: 0;
+      width: 20px;
+      height: 100%;
+    }
+  }
+
+  &:hover{
+    .item__edit{
+      display: block;
+
+    }
+    .item__delete{
+      display: block;
+    }
+  }
+}
+@media (width<800px) {
+  .item{
+    &:hover {
+      .item__btn {
+        display: block;
+      }
+      .item__edit{
+        display: block;
+
+      }
+      .item__delete{
+        display: block;
+      }
+    }
+  }
+}

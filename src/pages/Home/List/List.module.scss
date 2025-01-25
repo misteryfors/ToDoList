@@ -1,0 +1,109 @@
+@use "../../../mixins/fonts-mixin" as fonts;
+
+
+
+.list{
+    height: 100%;
+    width: 437.33px;
+    background: var(--primary-color-2);
+    border-radius: var(--border-radius-1);
+    display: flex;
+    flex-direction: column;
+    padding: var(--gap-24);
+    gap: var(--gap-16);
+    box-sizing: border-box;
+
+    &__name{
+        @include fonts.font-18-semi-bold;
+        color: var(--font-color-8);
+    }
+
+    &__block{
+        max-height: 65vh;
+        list-style: none;
+        display: flex;
+        flex-direction: column; 
+        gap: var(--gap-12);
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+            width: 12px; /* Ширина скроллбара */
+        }
+
+        &::-webkit-scrollbar-track {
+            background: var(--primary-color-2); /* Цвет дорожки */
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #191a1e; /* Цвет ползунка */
+
+            border-radius: 5px; /* Скругление углов ползунка */
+        }
+    }
+
+    &__add-button.hidden,
+    &__yes-button.hidden,
+    &__no-button.hidden{
+    display: none;
+    }
+    &__add-button,
+    &__yes-button,
+    &__no-button{
+        @include fonts.font-14-regular;
+        min-width: 50px;
+        border-radius: var(--border-radius-1);
+        border: none;
+        background: none;
+        gap:var(--gap-16);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        &:hover {
+            background: var(--primary-color-4);
+        }
+    }
+
+    &__add-button{
+
+        &::before{
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(../../../assets/add-line.svg);
+        }
+
+    }
+
+    &__button-block{
+        height: 50px;
+        width: 100%;
+        display: flex;
+
+    }
+
+    &__input{
+        min-height: 100px;
+        width: auto;
+        border: none;
+        background: var(--primary-color-3);
+        border-radius: var(--border-radius-1);
+        display: flex;
+    }
+
+
+
+
+}
+@media (width<1000px) {
+    .list {
+        width: 300px;
+        max-height: 80vh;
+    }
+}
+
+
