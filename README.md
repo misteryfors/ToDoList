@@ -18,6 +18,7 @@ https://www.figma.com/design/0InXcSFs6vm5c01OqQEnNs/Trello-board---auto-layout-c
 npm i
 npm run start
 
-github pages обновляется и выкладывается в ветку gh-pages командами
+github pages (https://misteryfors.github.io/ToDoList/) обновляется и выкладывается в ветку gh-pages командами
 npm run build
 npm run deploy
+
